@@ -21,6 +21,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "dotenv"
 end
 
