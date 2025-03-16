@@ -8,5 +8,8 @@ module Bookshelf
     get "/books/:id", to: "books.show", as: :show_book
     get "/books/new", to: "books.new"
     post "/books", to: "books.create", as: :create_book
+    post "/publishers", to: "publishers.create", as: :create_publisher
+    get "/publishers/new", to: "publishers.new"
+    get "/publishers/:id", to: "publishers.show", as: :show_publisher
   end
 end
