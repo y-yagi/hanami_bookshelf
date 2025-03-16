@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
-RSpec.describe Bookshelf::Actions::Publishers::Show do
-  let(:params) { Hash[] }
+RSpec.feature "Showing a publisher" do
+  let(:publishers) { Hanami.app["relations.publishers"] }
 
-  it "works" do
-    response = subject.call(params)
-    expect(response).to be_successful
+  context "when a publisher matches the given ID" do
+    let!(:publisher_id) do
+      publishers.insert(name: "Addison-Wesley Professional")
+    end
+
+    it "shows the publisher" do
+      visit "/publishers/#{publisher_id}"
+
+      expect(page).to have_content "Addison-Wesley Professional"
+    end
   end
 end

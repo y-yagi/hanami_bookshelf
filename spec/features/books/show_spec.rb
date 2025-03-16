@@ -1,9 +1,11 @@
 RSpec.feature "Showing a book" do
   let(:books) { Hanami.app["relations.books"] }
+  let(:publishers) { Hanami.app["relations.publishers"] }
 
   context "when a book matches the given ID" do
     let!(:book_id) do
-      books.insert(title: "Test Driven Development", author: "Kent Beck")
+      publisher_id = publishers.insert(name: "Addison-Wesley Professional")
+      books.insert(title: "Test Driven Development", author: "Kent Beck", publisher_id:)
     end
 
     it "shows the book" do

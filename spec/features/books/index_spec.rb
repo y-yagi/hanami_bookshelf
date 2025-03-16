@@ -1,9 +1,11 @@
 RSpec.feature "Books index" do
   let(:books) { Hanami.app["relations.books"] }
+  let(:publishers) { Hanami.app["relations.publishers"] }
 
   before do
-    books.insert(title: "Practical Object-Oriented Design in Ruby", author: "Sandi Metz")
-    books.insert(title: "Test Driven Development", author: "Kent Beck")
+    publisher_id = publishers.insert(name: "Addison-Wesley Professional")
+    books.insert(title: "Practical Object-Oriented Design in Ruby", author: "Sandi Metz", publisher_id:)
+    books.insert(title: "Test Driven Development", author: "Kent Beck", publisher_id:)
   end
 
   it "shows a list of books" do

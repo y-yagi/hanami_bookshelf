@@ -1,7 +1,12 @@
 RSpec.feature "Creating books" do
+  before do
+    Hanami.app["relations.publishers"].insert(name: "Addison-Wesley Professional")
+  end
+
   it "creates a book when given valid attributes" do
     visit "/books/new"
 
+    select "Addison-Wesley Professional", from: "publisher_id"
     fill_in "Title", with: "Practical Object-Oriented Design in Ruby"
     fill_in "Author", with: "Sandi Metz"
     click_on "Create"
@@ -14,6 +19,7 @@ RSpec.feature "Creating books" do
   it "shows errors and does not create the book when given invalid attributes" do
     visit "/books/new"
 
+    select "Addison-Wesley Professional", from: "publisher_id"
     fill_in "Title", with: "Practical Object-Oriented Design in Ruby"
     click_on "Create"
 
