@@ -11,7 +11,7 @@ module Bookshelf
             required(:publisher_id).filled(:integer)
             required(:title).filled(:string)
             required(:author).filled(:string)
-            required(:price).filled(:integer)
+            required(:price).filled(:integer, gteq?: 0)
           end
         end
 
