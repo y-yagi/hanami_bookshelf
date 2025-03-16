@@ -2,6 +2,10 @@
 
 <%= form_for :book, routes.path(:create_book) do |f| %>
   <p>
+    <%= f.label "publisher_id", for: :publisher_id %>
+    <%= f.select "publisher_id", publishers %>
+  </p>
+  <p>
     <%= f.label "Title", for: :title %>
     <%= f.text_field :title %>
   </p>

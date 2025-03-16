@@ -8,6 +8,7 @@ module Bookshelf
 
         params do
           required(:book).hash do
+            required(:publisher_id).filled(:integer)
             required(:title).filled(:string)
             required(:author).filled(:string)
           end
