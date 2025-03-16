@@ -1,6 +1,10 @@
 Hanami.app.register_provider(:email_client) do
   prepare do
-    class EmailClient; end
+    class EmailClient
+      def deliver(*)
+        true
+      end
+    end
   end
 
   start do
