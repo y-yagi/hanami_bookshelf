@@ -11,6 +11,7 @@ module Bookshelf
             required(:publisher_id).filled(:integer)
             required(:title).filled(:string)
             required(:author).filled(:string)
+            required(:price).filled(:integer)
           end
         end
 

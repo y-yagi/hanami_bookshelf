@@ -5,7 +5,7 @@ RSpec.feature "Books index pagination" do
   before do
     publisher_id = publishers.insert(name: "Publisher 1")
     10.times do |n|
-      books.insert(title: "Book #{n}", author: "Author #{n}", publisher_id:)
+      books.insert(title: "Book #{n}", author: "Author #{n}", price: n, publisher_id:)
     end
   end
 

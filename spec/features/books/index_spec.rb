@@ -4,8 +4,8 @@ RSpec.feature "Books index" do
 
   before do
     publisher_id = publishers.insert(name: "Addison-Wesley Professional")
-    books.insert(title: "Practical Object-Oriented Design in Ruby", author: "Sandi Metz", publisher_id:)
-    books.insert(title: "Test Driven Development", author: "Kent Beck", publisher_id:)
+    books.insert(title: "Practical Object-Oriented Design in Ruby", author: "Sandi Metz", price: 1000, publisher_id:)
+    books.insert(title: "Test Driven Development", author: "Kent Beck", price: 20000, publisher_id:)
   end
 
   it "shows a list of books" do

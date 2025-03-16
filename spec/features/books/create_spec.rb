@@ -9,6 +9,7 @@ RSpec.feature "Creating books" do
     select "Addison-Wesley Professional", from: "publisher_id"
     fill_in "Title", with: "Practical Object-Oriented Design in Ruby"
     fill_in "Author", with: "Sandi Metz"
+    fill_in "Price", with: 10000
     click_on "Create"
 
     expect(page).to have_content "Book created"

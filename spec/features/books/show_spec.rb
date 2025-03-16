@@ -5,7 +5,7 @@ RSpec.feature "Showing a book" do
   context "when a book matches the given ID" do
     let!(:book_id) do
       publisher_id = publishers.insert(name: "Addison-Wesley Professional")
-      books.insert(title: "Test Driven Development", author: "Kent Beck", publisher_id:)
+      books.insert(title: "Test Driven Development", author: "Kent Beck", price: 10000, publisher_id:)
     end
 
     it "shows the book" do
