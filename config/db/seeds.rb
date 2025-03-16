@@ -13,3 +13,10 @@
 #
 #   categories = Hanami.app["relations.categories"]
 #   categories.insert(title: "General")
+
+publishers = Hanami.app["relations.publishers"]
+publisher_id = publishers.insert(name: "Addison-Wesley Professional")
+
+books =  Hanami.app["relations.books"]
+books.insert(title: "Practical Object-Oriented Design in Ruby", author: "Sandi Metz", price: 1000, publisher_id:)
+books.insert(title: "Test Driven Development", author: "Kent Beck", price: 20000, publisher_id:)
