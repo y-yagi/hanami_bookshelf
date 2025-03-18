@@ -8,6 +8,12 @@ module Bookshelf
       ]
 
       def call(name:, email_address:)
+        result = step deliver(name:, email_address:)
+      end
+
+      private
+
+      def deliver(name:, email_address:)
         Success(email_client.deliver(
           to: email_address,
           subject: "Welcome!",
