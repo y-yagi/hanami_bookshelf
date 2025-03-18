@@ -6,5 +6,6 @@ module Bookshelf
     #
     # setting :my_flag, default: false, constructor: Types::Params::Bool
     setting :session_secret, constructor: Types::String
+    setting :sendgrid_api_key, constructor: Types::String
   end
 end
