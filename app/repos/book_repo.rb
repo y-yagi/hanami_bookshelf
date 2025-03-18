@@ -18,6 +18,10 @@ module Bookshelf
       def create(attributes)
         books.changeset(:create, attributes).commit
       end
+
+      def latest(page: 1)
+        books.order_by_latest.page(page).to_a
+      end
     end
   end
 end

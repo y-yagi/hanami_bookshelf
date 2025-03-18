@@ -11,6 +11,10 @@ module Bookshelf
 
       use :pagination
       per_page 5
+
+      def order_by_latest
+        order(self[:id].desc)
+      end
     end
   end
 end
